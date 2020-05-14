@@ -14,15 +14,18 @@ while True:
         break
     elif x > y:
         print ("Think of a number and tell me if my guess is right or not\n")
-        print ("Is your number {}?".format(str(guess))
+        print ("Is your number {}?".format(str(guess)))
         user_response = input("Yes/No:\n")
-        if user_response == "Yes":
-            print ("I got it!")
+        if user_response == "Yes" or "yes":
+            print ("I got it!, it took me {} attempts.".format(attempts))
             break
-        elif user_response == "No":
+        elif user_response == "No" or "no":
             print("Was I too high or too low?")
             range_response = input("Too high/too low:\n")
             if range_response == "Too high":
                 x=guess
+                attempts +=1
             elif range_response == "Too low":
-                 y=x
+                 y=guess
+                 attempts +=1
+                 
